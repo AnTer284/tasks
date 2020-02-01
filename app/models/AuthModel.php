@@ -19,7 +19,6 @@ class AuthModel extends Model
     public function checkUser(string $login, string $password): array
     {
         $db = new DB();
-
         $password = md5($password);
         $sql = "SELECT * FROM `users` WHERE  `name` = :login AND `password` = :password";
         $user = $db->row($sql, ['login' => $login, 'password' => $password]);

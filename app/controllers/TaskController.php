@@ -51,7 +51,7 @@ class TaskController extends Controller
                 $taskText
             );
 
-            redirect('index');
+            redirect('success');
         }
         $this->render('newTask');
     }

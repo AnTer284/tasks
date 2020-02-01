@@ -20,7 +20,7 @@ class Validator
      */
     public function newTaskValidate(string $name, string $email, string $text): void
     {
-        if(!$name || strlen($name) < 5) {
+        if(!$name || strlen($name) < 3) {
             throw new ValidateException(\Constants::INVALID_NAME);
         }
 

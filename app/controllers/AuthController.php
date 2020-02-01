@@ -30,6 +30,8 @@ class AuthController extends Controller
             if(!empty($user)) {
                 Auth::auth(true);
                 redirect('index');
+            } else {
+                echo 'ошибка';
             }
         }
 

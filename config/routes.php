@@ -2,6 +2,7 @@
 
 return [
     '/' => ['controller' => 'Task', 'action' => 'index', 'name' => 'index'],
+    '/success' => ['controller' => 'Task', 'action' => 'index', 'name' => 'success'],
     '/new_task' => ['controller' => 'Task', 'action' => 'newTask', 'name' => 'newTask'],
     '/edit_task' => ['controller' => 'Task', 'action' => 'editTask', 'name' => 'editTask'],
     '/delete_task' => ['controller' => 'Task', 'action' => 'deleteTask', 'name' => 'deleteTask'],

@@ -12,7 +12,7 @@
                 <a href="<?=uri('index') . '?order=status&num=' . $data['currentPageNum']?>" type="button" class="btn btn-secondary">Статус</a>
             </div>
         </div>
-
+        <?= $_SERVER['REQUEST_URI']=='/success'?"Ваша задача успешно добавлена":""     ?>
         <div class="col-md-6">
             <a href="<?=uri('newTask')?>" type="button" class="btn btn-primary float-right">Добавить задачу</a>
         </div>
