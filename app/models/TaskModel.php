@@ -39,12 +39,18 @@ class TaskModel extends Model
      * @param string $text
      * @param bool $status
      */
-    public function updateTask(int $id, string $text, bool $status): void
+    public function updateTask(int $id, string $text, bool $status, $taskTextOld): void
     {
         $db = new DB();
 
         $status = $status ? 1 : 0;
-        $sql = "UPDATE `tasks` SET `text` = :text, `status` = $status WHERE `id` = :id";
+
+        if ($taskTextOld!=$text){
+            $sql = "UPDATE `tasks` SET `text` = :text, `status` = 'Выполнено. Отредактировано администратором' WHERE `id` = :id";
+        } else {
+            $sql = "UPDATE `tasks` SET `text` = :text, `status` = $status WHERE `id` = :id";
+        }
+
         $db->query($sql, ['id' => $id, 'text' => $text]);
     }
 

@@ -25,7 +25,7 @@
                     <h5 class="card-title">Имя: <?=htmlspecialchars($task['user_name'])?></h5>
                     <p class="cars-text">
                         <?php if($task['status']):?>
-                            <b>Выполнено</b>
+                            <b><?=$task['status']?></b>
                         <?php else:?>
                             <b>Не выполнено</b>
                         <?php endif;?>

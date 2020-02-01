@@ -70,17 +70,20 @@ class TaskController extends Controller
         }
 
         $taskId = (int) $this->request->id;
+        $taskTextOld =  $this->request->textold;
 
         $taskModel = new TaskModel();
         if($this->request->isMethod('post')) {
-            $taskText = (string) trim($this->request->task_text);
+            $taskText = (string)trim($this->request->task_text);
             $this->validator->taskTextValidate($taskText);
 
-            $status = (bool) $this->request->status;
-            $taskModel->updateTask($taskId, $taskText, $status);
+            $status = (bool)$this->request->status;
+            $taskModel->updateTask($taskId, $taskText, $status, $taskTextOld);
 
             redirect('index');
+
         }
+
 
         $task = $taskModel->getTaskById($taskId);
 

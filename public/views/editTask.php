@@ -36,6 +36,7 @@
         </div>
 
         <input type="hidden" name="id" value="<?=$data['task']['id']?>">
+        <input type="hidden" name="textold" value="<?=$data['task']['text']?>">
 
         <input type="submit" class="btn btn-secondary" value="Сохранить">
         <a href="<?=uri('deleteTask')?>?id=<?=$data['task']['id']?>" class="btn btn-danger">Удалить</a>
